@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pokemon;
 use Illuminate\Http\Request;
 
 class PokemonController extends Controller
@@ -11,7 +12,8 @@ class PokemonController extends Controller
      */
     public function index()
     {
-        //
+        $pokemons = Pokemon::paginate(20);
+        return view('pokemons.index', compact('pokemons'));
     }
 
     /**
@@ -19,7 +21,7 @@ class PokemonController extends Controller
      */
     public function create()
     {
-        //
+        return view('pokemons.create');
     }
 
     /**
@@ -43,7 +45,7 @@ class PokemonController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('pokemons.edit', compact('pokemon'));
     }
 
     /**
