@@ -18,7 +18,7 @@ class PokemonController extends Controller
     public function index()
     {
         $pokemons = Pokemon::paginate(20);
-        return view('pokemons.index', compact('pokemons'));
+        return view('pokemon.index', compact('pokemon'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PokemonController extends Controller
      */
     public function create()
     {
-        return view('pokemons.create');
+        return view('pokemon.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class PokemonController extends Controller
      */
     public function edit(string $id)
     {
-        return view('pokemons.edit', compact('pokemon'));
+        return view('pokemon.edit', compact('pokemon'));
     }
 
     /**
