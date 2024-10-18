@@ -106,7 +106,7 @@
                     <button type="submit" class="btn btn-success btn-block">Save</button>
                     <button type="reset" class="btn btn-outline-danger btn-block">Reset</button>
                     <div class="d-flex justify-content-start mt-4">
-                    <a href="{{ route('Pokemons.index') }}" class="btn btn-secondary">Back</a>
+                    <a href="{{ route('Pokemon.index') }}" class="btn btn-secondary">Back</a>
                     </div>
                 </td>
             </table>
