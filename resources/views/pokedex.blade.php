@@ -19,8 +19,6 @@
                     @else
                     {{ __('You are logged in!') }}
                     @endguest
-
-
                 </div>
 
             </div>
@@ -37,12 +35,13 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $pokemon->name }}</h5>
                                 <a href="{{ route('pokemon.show', $pokemon) }}" class="card-link">ID: #{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }}</a>
-                                <p class="card-text">Type: {{ $pokemon->primary_type }}</p>
+                                <br>
+                                <p class="badge rounded-pill bg-success">{{ $pokemon->primary_type }}</p>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                </div>
+                </div><br>
             <!-- Pagination -->
             <div class="d-flex justify-content-center ">
                 {{ $pokemons->links() }}

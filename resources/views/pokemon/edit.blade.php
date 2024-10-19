@@ -80,6 +80,14 @@
                     placeholder="Input Defense" name="defense" value="{{ old('defense', $pokemon->defense)}}">
             </div><br>
 
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="is_legendary"
+                    name="is_legendary" value="{{ old('is_legendary', $pokemon->is_legendary)}}" >
+                <label class="form-check-label" for="is_legendary">
+                  Is Legendary
+                </label>
+            </div>
+
             {{-- Input Pokemon_image --}}
             <div class="form-group">
                 <label for="Pokemon_image">Pokemon Image</label>

@@ -34,14 +34,14 @@
                 <tr>
                     <th scope="row">{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }}</th>
                     <td>
-                        <a href="{{ route('pokemon.show', $Pokemon) }}">
+                        <a href="{{ route('pokemon.show', $pokemon) }}">
                         {{ $pokemon->name }}
                         </a>
                     </td>
-                    <td>{{ Str::limit($pokemon->description, 50, '...') }}</td>
+
                     <td>{{ $pokemon->species }}</td>
                     <td>{{ $pokemon->primary_type }}</td>
-                    <td>{{ $pokemon->power }}</td>
+                    <td>{{ $pokemon->hp + $pokemon->attack + $pokemon->defense }}</td>
                     <td>
                         <a href="{{ route('pokemon.edit', $pokemon) }}" class="btn btn-warning  btn-sm">
                            Edit

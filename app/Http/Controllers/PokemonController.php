@@ -10,7 +10,7 @@ class PokemonController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('index','show');
     }
 
     /**
@@ -79,7 +79,7 @@ class PokemonController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Pokemon $pokemon)
     {
         return view('pokemon.show', compact('pokemon'));
     }
@@ -87,7 +87,7 @@ class PokemonController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pokemon $pokemon)
     {
         return view('pokemon.edit', compact('pokemon'));
     }
