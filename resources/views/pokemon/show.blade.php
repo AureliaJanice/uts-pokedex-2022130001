@@ -5,85 +5,91 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
+    <div class="row d-flex justify-content-center ">
+        <div class="card">
+            <div class="card-header">Detail Character</div>
+            <div class="card-body">
+                <div class="row d-flex justify-content-center">
         <div class="col-sm-3">
             @if ($pokemon->photo)
-                <img src="{{ $pokemon->photo_url }}" class="rounded img-thumbnail w-25"/>
+                <img src="{{ $pokemon->photo_url }}" class="rounded img-thumbnail w-40"/>
             @endif
         </div>
-        <div class="col-sm-9">
-          <div class="row">
-            <div class="col-8 col-sm-6">
+        <div class="col-sm-6">
+          <div class="row d-flex justify-content-center">
+            <div class="col-8 col-sm-4">
                 Name
             </div>
-            <div class="col-4 col-sm-6">
+            <div class="col-8 col-sm-4">
                 {{ $pokemon->name }}
             </div>
-          </div>
-        </div>
-      </div>
-<table class="table table-striped table-bordered table-container table-center ">
-    <tbody>
-
-            <th>
-                @if ($pokemon->photo)
-                <img src="{{ $pokemon->photo_url }}" class="rounded img-thumbnail w-25"/>
-            @endif
-            </th>
-
-        <tr>
-            <th scope="row">Name</th>
-            <td>{{ $pokemon->name }}</td>
-        </tr>
-        <tr>
-            <th scope="row">Species</th>
-            <td>{{ $pokemon->species }}</td>
-        </tr>
-        <tr>
-            <th scope="row">Primary Type</th>
-            <td>{{ $pokemon->primary_type }}</td>
-        </tr>
-        <tr>
-            <th scope="row">Weight</th>
-            <td>{{ $pokemon->weight }}</td>
-        </tr>
-        <tr>
-            <th scope="row">height</th>
-            <td>{{ $pokemon->height }} </td>
-        </tr>
-        <tr>
-            <th scope="row">hp</th>
-            <td>{{ $pokemon->hp }}</td>
-        </tr>
-        <tr>
-            <th scope="row">attack</th>
-            <td>{{ $pokemon->attack }}</td>
-        </tr>
-        <tr>
-            <th scope="row">defense</th>
-            <td>{{ $pokemon->defense }}</td>
-        </tr>
-        <tr>
-            <th scope="row">Is Legendary</th>
-            @if ($pokemon->is_legendary)
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 col-sm-4">
+                    Species
+                </div>
+                <div class="col-4 col-sm-4">
+                    {{ $pokemon->species }}
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 col-sm-4">
+                    Primary Type
+                </div>
+                <div class="col-4 col-sm-4">
+                    {{ $pokemon->primary_type }}
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 col-sm-4">
+                    Weight
+                </div>
+                <div class="col-4 col-sm-4">
+                    {{ $pokemon->species }}
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 col-sm-4">
+                    Height
+                </div>
+                <div class="col-4 col-sm-4">
+                    {{ $pokemon->height }}
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 col-sm-4">
+                    Hp
+                </div>
+                <div class="col-4 col-sm-4">
+                    {{ $pokemon->hp }}
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 col-sm-4">
+                    Defense
+                </div>
+                <div class="col-4 col-sm-4">
+                    {{ $pokemon->defense }}
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 col-sm-4">
+                    Is Legendary
+                </div>
+                <div class="col-4 col-sm-4">
+                    @if ($pokemon->is_legendary)
                             <td>Yes</td>
                         @else
                             <td>No</td>
                         @endif
-        </tr>
-    </tbody>
-</table>
+                </div>
+            </div>
+        </div>
+      </div>
 </div>
 
-<div class="mb-3">
-    <small>Created at: {{ $pokemon->created_at }}</small>
-    @if ($pokemon->updated_at)
-        <br><small>Updated at: {{ $pokemon->updated_at }}</small>
-    @endif
-</div>
-
-<div class="mb-4">
-    <a href="{{ route('pokemon.index', $pokemon) }}" class="btn btn-secondary btn-sm">
+<br>
+<div class="mb-4 d-flex justify-content-center">
+    <a href="{{ route('pokemon.index', $pokemon) }}" class="btn btn-secondary btn-sm ">
     Back
     </a>
 </div><br>
