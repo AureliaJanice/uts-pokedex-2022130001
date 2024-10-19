@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="mt-4 p-5 bg-black text-white">
+<div class="text-center mb-4">
     <h1>Input New Pokemon</h1>
 </div>
 
@@ -20,7 +20,7 @@
         </div>
         @endif
 
-        <form action="{{ route('Pokemon.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('pokemon.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">

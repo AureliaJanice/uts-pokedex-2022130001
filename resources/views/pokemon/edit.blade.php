@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="mt-4 p-5 bg-black text-white">
+<div class="text-center mb-4">
     <h1>Update Pokemon</h1>
 </div>
 
@@ -20,7 +20,7 @@
         </div>
         @endif
 
-        <form action="{{ route('Pokemon.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('pokemon.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -43,7 +43,7 @@
                     <option value="" disabled selected>Select Primary Type</option>
                     @foreach (['Grass', 'Fire', 'Water', 'Bug', 'Normal', 'Poison', 'Electric', 'Ground', 'Fairy', 'Fighting', 'Psychic', 'Rock', 'Ghost', 'Ice', 'Dragon', 'Dark', 'Steel', 'Flying'] as $type)
                         <option value="{{ $type }}"
-                            {{ old('primary_type', $pokemons->primary_type) == $type ? 'selected' : '' }}>
+                            {{ old('primary_type', $pokemon->primary_type) == $type ? 'selected' : '' }}>
                             {{ $type }}</option>
                     @endforeach
                 </select>
