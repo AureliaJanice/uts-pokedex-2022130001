@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PokemonController extends Controller
 {
@@ -147,7 +148,7 @@ class PokemonController extends Controller
     public function destroy(Pokemon $pokemon)
     {
         if ($pokemon->pokemon_image) {
-            Pokemon::delete($pokemon->pokemon_image);
+            Storage::delete($pokemon->photo);
         }
         $pokemon->delete();
         return redirect()->route('pokemons.index')->with('success', 'pokemon deleted succesfully.');
