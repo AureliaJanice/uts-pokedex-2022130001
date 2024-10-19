@@ -7,14 +7,14 @@
 <div class="container">
     <div class="row d-flex justify-content-center ">
         <div class="card">
-            <div class="card-header">Detail Character</div>
+            <div class="card-header text-center">Detail Pokemon</div>
             <div class="card-body">
                 <div class="row d-flex justify-content-center">
-        <div class="col-sm-3">
-            @if ($pokemon->photo)
-                <img src="{{ $pokemon->photo_url }}" class="rounded img-thumbnail w-40"/>
-            @endif
-        </div>
+                    <div class="col-sm-3">
+                        @if ($pokemon->photo)
+                            <img src="{{ $pokemon->photo_url }}" class="rounded img-thumbnail w-40"/>
+                        @endif
+                    </div>
         <div class="col-sm-6">
           <div class="row d-flex justify-content-center">
             <div class="col-8 col-sm-4">
@@ -89,9 +89,14 @@
 
 <br>
 <div class="mb-4 d-flex justify-content-center">
-    <a href="{{ route('pokemon.index', $pokemon) }}" class="btn btn-secondary btn-sm ">
-    Back
+    <a href="{{ route('pokedex', $pokemon) }}" class="btn btn-secondary btn-sm me-3 ">
+        Back to Home
     </a>
+
+    <a href="{{ route('pokemon.index', $pokemon) }}" class="btn btn-secondary btn-sm ">
+        Back to List Pokemon
+    </a>
+
 </div><br>
 
 @endsection
