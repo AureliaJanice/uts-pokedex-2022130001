@@ -7,7 +7,8 @@
 <div class="container">
     <div class="row d-flex justify-content-center ">
         <div class="card">
-            <div class="card-header text-center">Detail Pokemon</div>
+            <div class="card-header text-center">
+                <h1>Detail Pokemon</h1></div>
             <div class="card-body">
                 <div class="row d-flex justify-content-center">
                     <div class="col-sm-3">

@@ -34,7 +34,7 @@
                             @endif
                             <div class="card-body">
                                 <h5 class="card-title">{{ $pokemon->name }}</h5>
-                                <a href="{{ route('pokemon.show', $pokemon) }}" class="card-link">ID: #{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }}</a>
+                                <a href="{{ route('pokemon.show', $pokemon) }}" class="card-link">#{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }}</a>
                                 <br>
                                 <p class="badge rounded-pill bg-success">{{ $pokemon->primary_type }}</p>
                             </div>
