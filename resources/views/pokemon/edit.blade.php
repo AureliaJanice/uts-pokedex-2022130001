@@ -41,24 +41,11 @@
                 <label for="primary_type" class="form-group">primary_type</label>
                 <select class="form-select" id="primary_type" name="primary_type">
                     <option value="" disabled selected>Select Primary Type</option>
-                    <option value="ID" {{ old('primary_type', $pokemon->primary_type) == 'ID' ? 'selected' : '' }}>Grass</option>
-                    <option value="CN" {{ old('primary_type', $pokemon->primary_type) == 'CN' ? 'selected' : '' }}>Fire</option>
-                    <option value="US" {{ old('primary_type', $pokemon->primary_type) == 'US' ? 'selected' : '' }}>Water</option>
-                    <option value="UK" {{ old('primary_type', $pokemon->primary_type) == 'UK' ? 'selected' : '' }}>Bug</option>
-                    <option value="MY" {{ old('primary_type', $pokemon->primary_type) == 'MY' ? 'selected' : '' }}>Normal</option>
-                    <option value="IN" {{ old('primary_type', $pokemon->primary_type) == 'IN' ? 'selected' : '' }}>Poison</option>
-                    <option value="JP" {{ old('primary_type', $pokemon->primary_type) == 'JP' ? 'selected' : '' }}>Electric</option>
-                    <option value="SG" {{ old('primary_type', $pokemon->primary_type) == 'SG' ? 'selected' : '' }}>Ground</option>
-                    <option value="ID" {{ old('primary_type', $pokemon->primary_type) == 'ID' ? 'selected' : '' }}>Fairy</option>
-                    <option value="CN" {{ old('primary_type', $pokemon->primary_type) == 'CN' ? 'selected' : '' }}>Fighting</option>
-                    <option value="US" {{ old('primary_type', $pokemon->primary_type) == 'US' ? 'selected' : '' }}>Psychic</option>
-                    <option value="UK" {{ old('primary_type', $pokemon->primary_type) == 'UK' ? 'selected' : '' }}>Rock</option>
-                    <option value="MY" {{ old('primary_type', $pokemon->primary_type) == 'MY' ? 'selected' : '' }}>Ghost</option>
-                    <option value="IN" {{ old('primary_type', $pokemon->primary_type) == 'IN' ? 'selected' : '' }}>Ice</option>
-                    <option value="JP" {{ old('primary_type', $pokemon->primary_type) == 'JP' ? 'selected' : '' }}>Dragon</option>
-                    <option value="SG" {{ old('primary_type', $pokemon->primary_type) == 'SG' ? 'selected' : '' }}>Dark</option>
-                    <option value="JP" {{ old('primary_type', $pokemon->primary_type) == 'JP' ? 'selected' : '' }}>Steel</option>
-                    <option value="SG" {{ old('primary_type', $pokemon->primary_type) == 'SG' ? 'selected' : '' }}>Flying</option>
+                    @foreach (['Grass', 'Fire', 'Water', 'Bug', 'Normal', 'Poison', 'Electric', 'Ground', 'Fairy', 'Fighting', 'Psychic', 'Rock', 'Ghost', 'Ice', 'Dragon', 'Dark', 'Steel', 'Flying'] as $type)
+                        <option value="{{ $type }}"
+                            {{ old('primary_type', $pokemons->primary_type) == $type ? 'selected' : '' }}>
+                            {{ $type }}</option>
+                    @endforeach
                 </select>
             </div><br>
 
@@ -108,7 +95,7 @@
                     <button type="submit" class="btn btn-success btn-block">Save</button>
                     <button type="reset" class="btn btn-outline-danger btn-block">Reset</button>
                     <div class="d-flex justify-content-start mt-4">
-                    <a href="{{ route('Pokemon.index') }}" class="btn btn-secondary">Back</a>
+                    <a href="{{ route('pokemon.index') }}" class="btn btn-secondary">Back</a>
                     </div>
                 </td>
             </table>

@@ -9,7 +9,7 @@ Route::get('/pokemon', [PokemonController::class, '__invoke'])->name('pokemon.in
 
 Auth::routes();
 
-Route::get('/', PokedexController::class, '__invoke')->name('home');
+Route::get('/', PokedexController::class, '__invoke')->name('pokedex');
 
 Route::resource('pokemon', PokemonController::class)->except('index');
 

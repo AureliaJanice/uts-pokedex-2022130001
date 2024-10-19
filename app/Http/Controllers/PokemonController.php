@@ -18,8 +18,8 @@ class PokemonController extends Controller
      */
     public function __invoke()
     {
-        $pokemon = Pokemon::paginate(20);
-        return view('pokemon.index', compact('pokemon'));
+        $pokemons = Pokemon::paginate(20);
+        return view('pokemon.index', compact('pokemons'));
     }
 
 

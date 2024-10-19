@@ -52,14 +52,14 @@
 </div>
 
 <div class="mb-3">
-    <small>Created at: {{ $pokemon->created_at }}</small>
-    @if ($pokemon->updated_at)
-        <br><small>Updated at: {{ $pokemon->updated_at }}</small>
+    <small>Created at: {{ $pokemons->created_at }}</small>
+    @if ($pokemons->updated_at)
+        <br><small>Updated at: {{ $pokemons->updated_at }}</small>
     @endif
 </div>
 
 <div class="mb-4">
-    <a href="{{ route('pokemons.index', $pokemon) }}" class="btn btn-secondary btn-sm">
+    <a href="{{ route('pokemon.index', $pokemon) }}" class="btn btn-secondary btn-sm">
     Back
     </a>
 </div><br>

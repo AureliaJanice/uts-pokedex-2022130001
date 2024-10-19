@@ -80,11 +80,11 @@
                     placeholder="Input Defense" name="defense" value="{{ old('defense')}}">
             </div><br>
 
-            {{-- Input Pokemon_image --}}
+            {{-- Input photo --}}
             <div class="form-group">
-                <label for="Pokemon_image">Pokemon Image</label>
-                <input type="file" class="form-control" id="Pokemon_image"
-                    name="Pokemon_image">
+                <label for="photo">Pokemon Image</label>
+                <input type="file" class="form-control" id="photo"
+                    name="photo">
             </div>
             <br>
 
@@ -93,7 +93,7 @@
                     <button type="submit" class="btn btn-success btn-block">Save</button>
                     <button type="reset" class="btn btn-outline-danger btn-block">Reset</button>
                     <div class="d-flex justify-content-start mt-4">
-                    <a href="{{ route('Pokemon.index') }}" class="btn btn-secondary">Back</a>
+                    <a href="{{ route('pokemon.index') }}" class="btn btn-secondary">Back</a>
                     </div>
                 </td>
             </table>
