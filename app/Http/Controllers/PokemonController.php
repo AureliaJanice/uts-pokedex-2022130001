@@ -16,11 +16,12 @@ class PokemonController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function __invoke()
     {
-        $pokemons = Pokemon::paginate(20);
+        $pokemon = Pokemon::paginate(20);
         return view('pokemon.index', compact('pokemon'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -119,7 +120,7 @@ class PokemonController extends Controller
 
             //hapus file yg ada
             if ($pokemon->photo){
-                Pokemon::delete([$pokemon->photo]);
+                Storage::delete([$pokemon->photo]);
             }
 
             $validated['photo'] = $imagePath;
@@ -136,10 +137,10 @@ class PokemonController extends Controller
             'attack' => $validated['origin'],
             'defense' => $validated['defense'] ,
             'is_legendary' => $validated['is_legendary'] ,
-            'photo' => $validated['photo']?? $pokemon->pokemon_image,
+            'photo' => $validated['photo']?? $pokemon->photo,
         ]);
 
-        return redirect()->route('pokemons.index')->with('success', 'pokemon updated succesfully.');
+        return redirect()->route('pokemon.index')->with('success', 'pokemon updated succesfully.');
     }
 
     /**
@@ -151,6 +152,6 @@ class PokemonController extends Controller
             Storage::delete($pokemon->photo);
         }
         $pokemon->delete();
-        return redirect()->route('pokemons.index')->with('success', 'pokemon deleted succesfully.');
+        return redirect()->route('pokemon.index')->with('success', 'pokemon deleted succesfully.');
     }
 }

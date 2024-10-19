@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\PokedexController;
+use App\Http\Controllers\PokemonController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function   (){
-    return view('home');
-})->name('home');
+Route::get('/pokemon', [PokemonController::class, '__invoke'])->name('pokemon.index');
 
 Auth::routes();
 
-Route::get('/pokemon', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', PokedexController::class, '__invoke')->name('home');
+
+Route::resource('pokemon', PokemonController::class)->except('index');
+
