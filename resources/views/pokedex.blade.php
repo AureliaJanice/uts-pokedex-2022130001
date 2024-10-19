@@ -15,7 +15,7 @@
                     @endif
 
                     @guest
-                    {{ __('Please log in!')}}
+                    {{ __('Please log in or register')}}
                     @else
                     {{ __('You are logged in!') }}
                     @endguest
