@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('weight',8, 2)->default(0);
             $table->decimal('height',8, 2)->default(0);
             $table->integer('hp')->default(0);
-            $table->integer('attack')->default(0);
+            $table->integer('attack',)->default(0);
             $table->integer('defense')->default(0);
             $table->boolean('is_legendary')->default(false);
             $table->text('photo')->nullable();
