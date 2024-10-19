@@ -34,7 +34,7 @@
                 <tr>
                     <th scope="row">{{ str_pad($pokemon->id, 4, '0', STR_PAD_LEFT) }}</th>
                     <td>
-                        <a href="{{ route('pokemon.show', $Pokemons) }}">
+                        <a href="{{ route('pokemon.show', $Pokemon) }}">
                         {{ $pokemon->name }}
                         </a>
                     </td>

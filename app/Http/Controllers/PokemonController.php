@@ -40,11 +40,11 @@ class PokemonController extends Controller
             'name' => 'required | string | max:225',
             'species' => 'required | string | max:100',
             'primary_type' => 'required | string | max:50 ',
-            'weight' => 'required | decimal | max:8 ',
-            'height' => 'required | decimal | max:8 ',
-            'hp' => 'required | integer | max:4 ',
-            'attack' => 'required | integer | max:4 ',
-            'defense' => 'required | integer | max:4 ',
+            'weight' => 'required | decimal | max:99999999 ',
+            'height' => 'required | decimal | max:99999999 ',
+            'hp' => 'required | integer | max:9999 ',
+            'attack' => 'required | integer | max:9999 ',
+            'defense' => 'required | integer | max:9999 ',
             'is_legendary' => 'required | boolean ',
         ]);
 
@@ -101,11 +101,11 @@ class PokemonController extends Controller
             'name' => 'required | string | max:225',
             'species' => 'required | string | max:100',
             'primary_type' => 'required | string | max:50 ',
-            'weight' => 'required | decimal | max:8 ',
-            'height' => 'required | decimal | max:8 ',
-            'hp' => 'required | integer | max:4 ',
-            'attack' => 'required | integer | max:4 ',
-            'defense' => 'required | integer | max:4 ',
+            'weight' => 'required | decimal | max:99999999 ',
+            'height' => 'required | decimal | max:99999999 ',
+            'hp' => 'required | integer | max:9999 ',
+            'attack' => 'required | integer | max:9999 ',
+            'defense' => 'required | integer | max:9999 ',
             'is_legendary' => 'required | boolean ',
         ]);
 
