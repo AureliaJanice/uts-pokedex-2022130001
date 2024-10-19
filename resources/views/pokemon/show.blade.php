@@ -45,7 +45,7 @@
                     Weight
                 </div>
                 <div class="col-4 col-sm-4">
-                    {{ $pokemon->species }}
+                    {{ $pokemon->weight }}
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
